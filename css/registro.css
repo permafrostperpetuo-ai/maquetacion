@@ -1,0 +1,156 @@
+/* 1. Reset básico para controlar tamaños y márgenes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Lienzo principal: fondo crema y centrado en toda la pantalla */
+body {
+    background-color: #fbf6ec;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* 3. Contenedor principal dividido en 2 columnas (Izquierda: Logo | Derecha: Contenido) */
+main {
+    width: 100%;
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    column-gap: 60px;
+    align-items: center;
+}
+
+/* Truco Grid: hace que los hijos de <header> participen directo en la cuadrícula de <main> */
+header {
+    display: contents;
+}
+
+/* Columna Izquierda: Logotipo grande centrado */
+header img {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Columna Derecha: Enlace Volver, Título y Subtítulo */
+header > a,
+header h1,
+header p,
+form {
+    grid-column: 2;
+}
+
+header > a {
+    color: #1f2937;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    justify-self: start;
+}
+
+header > a:hover {
+    text-decoration: underline;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-size: 0.92rem;
+    color: #4b5563;
+    margin-bottom: 18px;
+}
+/* 4. Estructura y estilo de los campos del formulario */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+}
+
+label {
+    grid-column: 1 / -1;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #ffffff;
+    border: 1.5px solid #374151;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    color: #111827;
+    margin-bottom: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #d97706;
+    box-shadow: 0 0 0 3px rgba(251, 189, 8, 0.3);
+}
+/* 5. Botones de acción en fila (Izquierda: Cancelar | Derecha: Registrarse) */
+form > a[href="validacion.html"] {
+    grid-column: 1;
+    grid-row: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    background-color: #fbf6ec;
+    color: #111827;
+    border: 1.5px solid #374151;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+form > a[href="validacion.html"]:hover {
+    background-color: #f3ead8;
+}
+
+button[type="submit"] {
+    grid-column: 2;
+    grid-row: 9;
+    padding: 11px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1.5px solid #2b2b2b;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: #111827;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}

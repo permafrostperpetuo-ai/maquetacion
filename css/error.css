@@ -1,0 +1,128 @@
+/* =========================================================
+   1. RESET Y LIENZO GENERAL (error.css)
+   ========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fbf6ec;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* =========================================================
+   2. CONTENEDOR PRINCIPAL CENTRADO
+   ========================================================= */
+main {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================================
+   3. ENCABEZADO (Ícono grande, Título y Subtítulo)
+   ========================================================= */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+header img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    margin-bottom: 14px;
+}
+
+header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+header p {
+    max-width: 340px;
+    font-size: 0.92rem;
+    color: #374151;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   4. CAJA ROSADA DE DETALLES (Primer <div> dentro de <main>)
+   ========================================================= */
+main > div:first-of-type {
+    width: 100%;
+    background-color: #ea9999;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Segundo error.png pequeño a la izquierda de la lista */
+main > div:first-of-type img {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Lista de motivos de error */
+main > div:first-of-type ul {
+    padding-left: 16px;
+    color: #1f1f1f;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.45;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* =========================================================
+   5. BOTÓN AMARILLO "VOLVER A INTENTAR" (Último <div>)
+   ========================================================= */
+main > div:last-of-type {
+    width: 100%;
+    max-width: 380px;
+}
+
+button[type="button"] {
+    width: 100%;
+    padding: 11px 16px;
+    background-color: #fbbd08;
+    color: #111827;
+    border: 1.5px solid #111827;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button[type="button"]:hover {
+    background-color: #eab308;
+}
+
+button[type="button"]:active {
+    transform: scale(0.99);
+}
